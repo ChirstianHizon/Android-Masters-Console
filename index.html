@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Boost Console</title>
+
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase-messaging.js"></script>
+
+    <link href="css\metro.min.css" rel="stylesheet">
+    <link href="css\metro-icons.min.css" rel="stylesheet">
+    <script src="js\jquery.js"></script>
+    <script src="js\metro.min.js"></script>
+
+    <link href="css\responsive-grid.css" rel="stylesheet">
+    <link href="css\styles.css" rel="stylesheet">
+    <script src="js\firebase-init.js"></script>
+
+  </head>
+  <body>
+
+    <div id="collection_table">
+      <table class="table striped hovered cell-hovered border bordered">
+          <thead>
+              <tr>
+                  <th>Image Name</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> Sample</td>
+              <td> Sample</td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
+
+    <div class="section group">
+    	<div class="col span_1_of_2">
+
+        <div id="forms">
+          Add a New Project <br />
+          <form onsubmit="return getProjectDetails()">
+            <br />
+            Name<br />
+            <div class="input-control text">
+              <input id="name" type="text" />
+            </div>
+
+            <br />
+            Short Descripton<br />
+            <div class="input-control text">
+              <input id="shrtdesc" type="text" />
+            </div>
+
+            <br />
+            Goal<br />
+            <div class="input-control text">
+            <input id="goal" type="number" />
+          </div>
+            <br />
+            Date End<br />
+            <div class="input-control text" data-role="datepicker">
+              <input id="dateend" type="text" />
+              <button class="button"><span class="mif-calendar"></span></button>
+            </div>
+
+            <br />
+            Image<br />
+            <div class="input-control text">
+              <input id="image" type="text" readonly/>
+            </div>
+
+            <div class="input-control file" data-role="input">
+              <input type="file" id="fileUpload" placeholder="Choose Product Image" onchange="getimage(event)" >
+              <button class="button"><span class="mif-folder"></span></button>
+            </div><br>
+
+            <br />
+        </div>
+
+    	</div>
+
+
+
+    	<div class="col span_1_of_2">
+        <div id="forms">
+          Project Details <br />
+            <br />
+
+            Organization<br />
+            <div class="input-control text">
+              <input id="org" type="text" />
+            </div>
+            <br />
+            Logo<br />
+            <div class="input-control text">
+              <input id="logo" type="text" />
+            </div>
+
+            <br />
+            Full Description<br />
+            <div class="input-control textarea">
+              <textarea id="desc"></textarea>
+            </div>
+
+            <br />
+            Images<br />
+            <div class="input-control text">
+              <input id="img" type="text" />
+              <button class="button"onclick="return addImage();"> + </button>
+            </div>
+            <br />
+            Images
+            <table class="table striped hovered cell-hovered border bordered">
+                <thead>
+                    <tr>
+                        <th>Image Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> Sample</td>
+                    <td> Sample</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    	</div>
+    </div>
+
+      <button class="button primary"> Add Project </button><br />
+      <button class="button loading-cube">Loading...</button>
+    </form>
+
+    <script src="js\content-scripts.js"></script>
+  </body>
+</html>

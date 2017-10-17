@@ -1,0 +1,14 @@
+#forms{
+  border: 1px solid black;
+  padding: 10px;
+  min-height: 500px;
+}
+.input-control.text,
+.input-control.file,
+.input-control.textarea{
+  width: 100%;
+}
+body{
+  margin-left: 10px;
+  margin-right: 10px;
+}
